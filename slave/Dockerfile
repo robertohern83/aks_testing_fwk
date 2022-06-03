@@ -14,6 +14,8 @@ RUN   mkdir /jmeter \
 && tar -xzf apache-jmeter-$JMETER_VERSION.tgz \
 && rm apache-jmeter-$JMETER_VERSION.tgz
 
+COPY jwssigner80.jar /jmeter/apache-jmeter-$JMETER_VERSION/lib/ext
+
 ENV JMETER_HOME /jmeter/apache-jmeter-$JMETER_VERSION/
 		
 ENV PATH $JMETER_HOME/bin:$PATH
